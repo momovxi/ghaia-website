@@ -1,0 +1,8 @@
+node_modules/
+temporary screenshots/
+package-lock.json
+screenshot.mjs
+serve.mjs
+*.code-workspace
+.DS_Store
+finsight.framer.ai_.png
