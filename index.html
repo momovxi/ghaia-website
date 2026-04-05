@@ -1722,7 +1722,8 @@
           </div>
 
           <div class="contact-form reveal" style="transition-delay:0.15s">
-            <form action="#" method="POST" novalidate aria-label="Consultation request form">
+            <form name="consultation" action="#" method="POST" data-netlify="true" novalidate aria-label="Consultation request form">
+              <input type="hidden" name="form-name" value="consultation">
 
               <div class="form-row">
                 <div class="form-group">
@@ -1997,13 +1998,35 @@
       }, 2100);
     })();
 
-    // ── Form submit (placeholder) ──────────────────────────────────
-    document.querySelector('form').addEventListener('submit', e => {
+    // ── Form submit — Netlify Forms AJAX ──────────────────────────
+    document.querySelector('form[name="consultation"]').addEventListener('submit', async e => {
       e.preventDefault();
-      const btn = e.target.querySelector('[type="submit"]');
-      btn.textContent = '✓ Request Sent!';
-      btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+      const form = e.target;
+      const btn  = form.querySelector('[type="submit"]');
+
+      btn.textContent = 'Sending…';
       btn.disabled = true;
+
+      try {
+        const body = new URLSearchParams(new FormData(form)).toString();
+        const res  = await fetch('/', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body,
+        });
+
+        if (res.ok) {
+          btn.textContent = '✓ Request Sent!';
+          btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+          form.reset();
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      } catch {
+        btn.textContent = 'Something went wrong — please try again';
+        btn.style.background = '#c0392b';
+        btn.disabled = false;
+      }
     });
   </script>
 
