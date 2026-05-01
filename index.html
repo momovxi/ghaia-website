@@ -42,7 +42,7 @@
       --max-w:        1240px;
 
       /* Layout */
-      --nav-h:        90px;
+      --nav-h:        130px;
       --section-py:   120px;
       --radius-card:  12px;
       --radius-btn:   6px;
@@ -250,19 +250,15 @@
 
     /* Logo */
     .nav-logo {
-      position: relative;
-      width: 90px;
-      height: 90px;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
       flex-shrink: 0;
     }
     .nav-logo-img {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      height: 120px;
+      width: 120px;
+      object-fit: contain;
+      display: block;
     }
 
     /* Desktop nav links */
