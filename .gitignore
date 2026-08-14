@@ -6,3 +6,8 @@ serve.mjs
 *.code-workspace
 .DS_Store
 finsight.framer.ai_.png
+
+# local tooling / working files (not deployed)
+.claude/
+index.pre-profile-backup.html
+_*.mjs
