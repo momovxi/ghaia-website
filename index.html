@@ -375,8 +375,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-top: calc(var(--nav-h) + var(--s8));
-      padding-bottom: var(--s6);
+      padding-top: calc(var(--nav-h) + var(--s6));
+      padding-bottom: var(--s8);
       background: var(--bg-deep);
       overflow: hidden;
     }
@@ -403,29 +403,6 @@
     .hero-copy { max-width: 660px; }
     .hero-lede { margin-bottom: var(--s7); max-width: 54ch; }
     .hero-btns { display: flex; flex-wrap: wrap; gap: var(--s3); }
-
-    /* Cover meta strip — lifted straight from the profile cover */
-    .hero-meta {
-      position: relative;
-      z-index: 1;
-      margin-top: clamp(48px, 7vw, 96px);
-      border-top: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .hero-meta-item {
-      padding: var(--s5) var(--s5) 0 0;
-      font-family: var(--f-mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
-      color: var(--text-3);
-    }
-    .hero-meta-item + .hero-meta-item {
-      padding-left: var(--s5);
-      border-left: 1px solid var(--line-soft);
-    }
-    a.hero-meta-item { transition: color var(--t-micro) var(--ease); }
-    a.hero-meta-item:hover { color: var(--cyan); }
 
     /* ============================================================
        07 — INSTRUMENT PANEL (hero signature)
@@ -1164,14 +1141,10 @@
       .dg-text     { font-size: 14px; letter-spacing: 2px; }
       .dg-text--lg { font-size: 17px; letter-spacing: 3px; }
 
-      .hero-meta { grid-template-columns: 1fr 1fr; }
-      .hero-meta-item { padding: var(--s4) var(--s4) var(--s4) 0; }
-      .hero-meta-item:nth-child(2n) {
-        padding-left: var(--s4);
-        border-left: 1px solid var(--line-soft);
-      }
-      .hero-meta-item:nth-child(2n+1) { border-left: none; padding-left: 0; }
-      .hero-meta-item:nth-child(n+3) { border-top: 1px solid var(--line-soft); }
+      /* Phones: the diagram's labels are too fine to read at this width,
+         and the copy already carries the point. */
+      .hero-panel-col { display: none; }
+
       .systems { grid-template-columns: 1fr; }
       .stats { grid-template-columns: 1fr; }
       .stat { padding: var(--s5) 0; }
@@ -1365,14 +1338,6 @@
         </div>
       </div>
 
-      <div class="container">
-        <div class="hero-meta rv" style="transition-delay:420ms">
-          <span class="hero-meta-item">Est. 2026</span>
-          <span class="hero-meta-item">Doha, Qatar</span>
-          <a class="hero-meta-item" href="mailto:info@qonciergex.com">info@qonciergex.com</a>
-          <a class="hero-meta-item" href="https://qonciergex.com">qonciergex.com</a>
-        </div>
-      </div>
     </section>
 
     <!-- ============================================================
