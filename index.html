@@ -569,59 +569,6 @@
       line-height: 1.7;
     }
 
-    .provenance {
-      margin-top: clamp(48px, 6vw, 72px);
-      padding-top: var(--s7);
-      border-top: 1px solid var(--line-soft);
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: var(--s6);
-      align-items: center;
-    }
-    .provenance-label {
-      font-family: var(--f-mono);
-      font-size: 0.6875rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-4);
-      line-height: 1.8;
-    }
-    .marks {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--s4);
-    }
-    .mark {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100px;
-      padding: var(--s4);
-      background: var(--surface);
-      border: 1px solid var(--line-soft);
-      border-radius: var(--r-card);
-      transition: border-color var(--t-micro) var(--ease),
-                  background var(--t-micro) var(--ease);
-    }
-    .mark:hover { border-color: var(--line); background: var(--surface-2); }
-
-    /* Client marks from the company profile.
-       Sized by lettering weight, not bounding box: BCG is a solid wordmark,
-       while PwC carries a chevron and Al Jazeera a tall calligraph, so both
-       need more room to read at the same visual size. */
-    .mark-logo {
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      object-fit: contain;
-      opacity: 0.9;
-      transition: opacity var(--t-micro) var(--ease);
-    }
-    .mark:hover .mark-logo { opacity: 1; }
-    .mark-logo--pwc { max-height: 66px; }
-    .mark-logo--bcg { max-height: 43px; }
-    .mark-logo--aj  { max-height: 52px; }
-
     /* ============================================================
        09 — SYSTEMS (hairline grid, 4 × 2)
     ============================================================ */
@@ -1127,7 +1074,6 @@
       .contact-grid { grid-template-columns: 1fr; }
       .process-head { grid-template-columns: 1fr; }
       .process-note { text-align: left; max-width: 52ch; }
-      .provenance { grid-template-columns: 1fr; gap: var(--s5); }
     }
 
     @media (max-width: 900px) {
@@ -1153,11 +1099,6 @@
         border-left: none;
         border-top: 1px solid var(--line-soft);
       }
-      .marks { grid-template-columns: 1fr; }
-      .mark { min-height: 88px; }
-      .mark-logo--pwc { max-height: 56px; }
-      .mark-logo--bcg { max-height: 37px; }
-      .mark-logo--aj  { max-height: 44px; }
       .form-row { grid-template-columns: 1fr; gap: 0; }
       .callout { grid-template-columns: 1fr; gap: var(--s3); }
       .contact-meta { grid-template-columns: 1fr; }
@@ -1372,21 +1313,6 @@
           <div class="stat">
             <div class="stat-value">MENA</div>
             <div class="stat-label">Market exposure</div>
-          </div>
-        </div>
-
-        <div class="provenance rv">
-          <div class="provenance-label">Experience<br>built at</div>
-          <div class="marks">
-            <div class="mark">
-              <img class="mark-logo mark-logo--pwc" src="brand_assets/exp-pwc.png" alt="PwC" width="960" height="465" loading="lazy">
-            </div>
-            <div class="mark">
-              <img class="mark-logo mark-logo--bcg" src="brand_assets/exp-bcg.png" alt="BCG" width="1000" height="408" loading="lazy">
-            </div>
-            <div class="mark">
-              <img class="mark-logo mark-logo--aj" src="brand_assets/exp-aljazeera.png" alt="Al Jazeera" width="1280" height="433" loading="lazy">
-            </div>
           </div>
         </div>
 
