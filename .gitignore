@@ -11,3 +11,6 @@ finsight.framer.ai_.png
 .claude/
 index.pre-profile-backup.html
 _*.mjs
+
+# developer sandbox copy (edit freely, never deployed)
+dev/
